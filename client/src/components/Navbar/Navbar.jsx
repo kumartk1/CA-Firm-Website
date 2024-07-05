@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
-const Header = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -49,4 +49,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export default Navbar;
