@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'consulting': "url('./src/assets/contact assets/consultingPic.webp')",
+      },
+    },
   },
   plugins: [],
 }

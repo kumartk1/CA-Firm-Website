@@ -1,0 +1,29 @@
+.leaflet-container {
+    height: 60vh;
+    width: 80%;
+    margin: 0 auto ;
+    border: 2px solid rgb(51, 65, 85);
+    border-bottom: 0px;
+}
+
+@media screen and (min-width : 768px) {
+    .leaflet-container {
+        width: 50%;
+        margin: 3% 0;
+        border-bottom: 2px solid rgb(51, 65, 85);
+        border-right: 0px;
+    }
+}
+
+.custom-icon {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #43464d;
+    transform: translate(-25%,-25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 1.5rem;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImg from '../assets/background-img.jpg';
+import backgroundImg from '../../assets/background-img.jpg';
 
 const MainSection = () => {
   return (
