@@ -10,8 +10,8 @@ const Map = () => {
 
     const markers = [
         {
-            geocode : [30.839632 , 76.184158] ,
-            popup : 'Rahul Grover\'s Home'
+            geocode : [22.962267, 76.044217] ,
+            popup : 'Head Office'
         } ,
     ]
 
@@ -29,7 +29,7 @@ const Map = () => {
     }
 
   return (
-    <MapContainer center={[30.839632 , 76.184158]} zoom={13} >
+    <MapContainer center={[22.962267, 76.044217]} zoom={13} >
         <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url='https://tile.openstreetmap.org/{z}/{x}/{y}.png'
