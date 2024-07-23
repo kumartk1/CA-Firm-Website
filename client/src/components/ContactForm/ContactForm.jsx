@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineUser, AiOutlineMail, AiOutlinePhone, AiOutlineMessage } from 'react-icons/ai';
+import { FiPhoneCall } from 'react-icons/fi';
 
 const ContactForm = () => {
     const [name, setName] = useState('');
@@ -18,78 +18,71 @@ const ContactForm = () => {
     };
 
     return (
-        <div className="contact-form w-full md:w-[50%] lg:w-[50%] mx-auto py-10 bg-gray-100 rounded-lg shadow-lg">
-            <div className="flex items-center justify-center">
-                <div className="mr-4 flex-shrink-0">
-                    <AiOutlineUser className="text-gray-600 text-3xl" />
+        <div className="bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-800">Get in Touch</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="flex flex-col">
+                    <label htmlFor="clientName" className="text-sm md:text-base font-semibold text-gray-700 mb-2">Name</label>
+                    <input
+                        id="clientName"
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="p-2 text-sm md:text-base text-gray-800 w-full border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-colors"
+                        placeholder="Your Name"
+                        required
+                    />
                 </div>
-                <h1 className="text-slate-700 text-xl md:text-3xl font-semibold tracking-wide">Get a consultation by an Expert</h1>
-            </div>
-            <div className="my-8 flex justify-center items-center">
-                <form onSubmit={handleSubmit} className="w-full flex flex-col gap-y-6 justify-center items-center">
-                    <label htmlFor="clientName" className="w-11/12 sm:w-2/3">
-                        <p className="text-base md:text-lg font-semibold text-gray-600 cursor-pointer p-1">Name</p>
-                        <div className="flex items-center">
-                            <AiOutlineUser className="text-gray-500 mr-2" />
-                            <input
-                                id="clientName"
-                                type="text"
-                                name="name"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                className="p-3 text-base md:text-lg w-full border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-colors"
-                            />
-                        </div>
-                    </label>
-                    <label htmlFor="clientEmail" className="w-11/12 sm:w-2/3">
-                        <p className="text-base md:text-lg font-semibold text-gray-600 cursor-pointer p-1">Email</p>
-                        <div className="flex items-center">
-                            <AiOutlineMail className="text-gray-500 mr-2" />
-                            <input
-                                id="clientEmail"
-                                type="email"
-                                name="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="p-3 text-base md:text-lg w-full border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-colors"
-                            />
-                        </div>
-                    </label>
-                    <label htmlFor="clientNumber" className="w-11/12 sm:w-2/3">
-                        <p className="text-base md:text-lg font-semibold text-gray-600 cursor-pointer p-1">Phone Number</p>
-                        <div className="flex items-center">
-                            <AiOutlinePhone className="text-gray-500 mr-2" />
-                            <input
-                                id="clientNumber"
-                                type="tel"
-                                name="number"
-                                value={number}
-                                onChange={(e) => setNumber(e.target.value)}
-                                className="p-3 text-base md:text-lg w-full border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-colors"
-                            />
-                        </div>
-                    </label>
-                    <label htmlFor="clientMessage" className="w-11/12 sm:w-2/3">
-                        <p className="text-base md:text-lg font-semibold text-gray-600 cursor-pointer p-1">Message</p>
-                        <div className="flex items-center">
-                            <AiOutlineMessage className="text-gray-500 mr-2" />
-                            <textarea
-                                rows={5}
-                                id="clientMessage"
-                                name="message"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                className="p-3 text-base md:text-lg w-full border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-colors"
-                            />
-                        </div>
-                    </label>
-                    <button
-                        type="submit"
-                        className="px-6 py-3 text-[16px] text-white rounded-sm font-semibold tracking-wide bg-gray-900 rounded-md shadow-md transition-transform transform hover:scale-105"
-                    >
-                        Submit
-                    </button>
-                </form>
+                <div className="flex flex-col">
+                    <label htmlFor="clientEmail" className="text-sm md:text-base font-semibold text-gray-700 mb-2">Email</label>
+                    <input
+                        id="clientEmail"
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="p-2 text-sm md:text-base text-gray-800 w-full border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-colors"
+                        placeholder="Your Email"
+                        required
+                    />
+                </div>
+                <div className="flex flex-col">
+                    <label htmlFor="clientNumber" className="text-sm md:text-base font-semibold text-gray-700 mb-2">Phone Number</label>
+                    <input
+                        id="clientNumber"
+                        type="tel"
+                        name="number"
+                        value={number}
+                        onChange={(e) => setNumber(e.target.value)}
+                        className="p-2 text-sm md:text-base text-gray-800 w-full border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-colors"
+                        placeholder="Your Phone Number"
+                        required
+                    />
+                </div>
+                <div className="flex flex-col">
+                    <label htmlFor="clientMessage" className="text-sm md:text-base font-semibold text-gray-700 mb-2">Message</label>
+                    <textarea
+                        rows={5}
+                        id="clientMessage"
+                        name="message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        className="p-2 text-sm md:text-base text-gray-800 w-full border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-colors"
+                        placeholder="Your Message"
+                        required
+                    />
+                </div>
+                <button
+                    type="submit"
+                    className="mt-4 px-6 py-3 text-base md:text-lg text-white rounded-md font-semibold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
+                >
+                    Submit
+                </button>
+            </form>
+            <div className="mt-6 flex items-center text-gray-600">
+                <FiPhoneCall className="text-lg mr-2" />
+                <p className="text-base">Or call us at <a href="tel:+1234567890" className="underline">+1 (234) 567-890</a> to get started.</p>
             </div>
         </div>
     );
