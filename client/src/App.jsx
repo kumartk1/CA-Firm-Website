@@ -1,23 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
+import ServicesPage from './pages/Services/Services';
 import Contact from './pages/Contact/Contact';
-import OutletPage from './pages/Home/OutletPage';
+// import Blogs from './pages/Blogs/Blogs';
+// import About from './pages/About/About';
+import useScrollToTop from './hooks/useScrollToTop';
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<OutletPage />}>
-          <Route index element={<Home />} />
-          <Route path='/services' element={<Contact />} />
-          <Route path='/blogs' element={<Contact />} />
-          <Route path='/about' element={<Contact />} />
-          <Route path='/contact' element={<Contact />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
-}
+const App = () => {
+    useScrollToTop();
+
+    return (
+        <>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/contact" element={<Contact />} />
+                {/* <Route path="/blogs" element={<Blogs />} />
+                <Route path="/about" element={<About />} /> */}
+            </Routes>
+        </>
+    );
+};
 
 export default App;
