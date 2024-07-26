@@ -12,7 +12,7 @@ import ubi from '../../assets/clients/ubi.png';
 
 const ClientsSection = () => {
     const { ref, inView } = useInView({
-        triggerOnce: true,
+        triggerOnce: false,
         threshold: 0.1,
     });
 
