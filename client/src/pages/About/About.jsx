@@ -46,8 +46,7 @@ const About = () => {
         variants={fadeInUp}
       >
         About Us
-      </motion.h1>
-      
+      </motion.h1>  
       <motion.div
         className="who-we-are p-5"
         ref={whoWeAreRef}
@@ -175,7 +174,6 @@ const About = () => {
         variants={fadeInUp}
       >
         <img src={visionImgs[2]} alt="" className='mx-auto w-screen md:w-1/2 object-cover h-56 md:h-full' />
-
         <div className='text-center z-10 text-opacity-100 md:w-1/2 m-auto'>
           <p className='text-[14px] md:text-[16px] text-slate-600 font-semibold p-4'>Our vision is to be a trusted partner in financial excellence and compliance for our clients. We are committed to providing high-quality, personalized professional services tailored to meet the unique needs of each client.
             <span className='hidden lg:block'>Through our deep industry knowledge, integrity, and dedication, we empower businesses and individuals to manage and grow their financial health effectively. Our goal is to be recognized as leaders in the industry, delivering innovative solutions that ensure financial success and sustainability for our clients.</span>
@@ -199,5 +197,4 @@ const About = () => {
     </div>
   );
 };
-
 export default About;
