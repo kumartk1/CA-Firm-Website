@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
@@ -8,6 +8,7 @@ const email = import.meta.env.VITE_CONTACT_EMAIL;
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -29,8 +30,24 @@ const Navbar = () => {
         }
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <header className="sticky top-0 bg-gradient-to-r from-[#F5F5F5] via-[#FFFFFF] to-[#F5F5F5] z-50">
+        <header className={`sticky top-0 z-50 transition-all duration-300 ${isSticky ? 'bg-white shadow-md' : 'bg-gradient-to-r from-[#F5F5F5] via-[#FFFFFF] to-[#F5F5F5]'}`}>
             {/* Top Navbar Bar */}
             <div className="bg-gray-900 text-white text-sm py-2 justify-between items-center hidden md:flex">
                 <div className="ml-4 flex items-center space-x-4">
@@ -67,13 +84,6 @@ const Navbar = () => {
                             onClick={() => handleNavLinkClick('/services')}
                         >
                             Services
-                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></div>
-                        </button>
-                        <button
-                            className="font-semibold relative group hover:text-blue-600"
-                            onClick={() => handleNavLinkClick('/blogs')}
-                        >
-                            Blogs
                             <div className="absolute bottom-0 left-0 h-1 w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></div>
                         </button>
                         <button
@@ -150,15 +160,6 @@ const Navbar = () => {
                             }}
                         >
                             Services
-                        </button>
-                        <button
-                            className="font-semibold text-left hover:text-blue-600" 
-                            onClick={() => {
-                                handleNavLinkClick('/blogs');
-                                toggleMenu();
-                            }}
-                        >
-                            Blogs
                         </button>
                         <button
                             className="font-semibold text-left hover:text-blue-600" 

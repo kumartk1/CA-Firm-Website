@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import consultingImage from '../../assets/contact assets/consultingPic.webp';
+import consultingImage from '../../assets/contact-assets/consultingPic.webp';
 import { MdArrowOutward } from "react-icons/md";
-import "./Contact.css";
 import ContactCard from './ContactCard';
 import Map from '../../components/Map/Map';
-import ContactForm from '../../components/ContactForm/ContactForm';
 import ContactSection from '../../components/ContactSection/ContactSection';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Contact = () => {
   const contactsData = [
@@ -31,11 +31,36 @@ const Contact = () => {
     }
   ];
 
+  // Hero Section animation
+  const { ref: heroRef, inView: heroInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  // Contact Cards Section animation
+  const { ref: contactCardsRef, inView: contactCardsInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  // Connect with Our Offices Section animation
+  const { ref: officesRef, inView: officesInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
     <div className='min-h-screen h-fit'>
       <Navbar />
 
-      <div className='bg-gray-200 flex max-h-[400px] justify-between mb-10 border-b-2 border-b-slate-700'>
+      {/* Hero Section */}
+      <motion.div
+        className='bg-gray-200 flex max-h-[400px] justify-between mb-10 border-b-2 border-b-slate-700'
+        ref={heroRef}
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: heroInView ? 1 : 0, y: heroInView ? 0 : -30 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
         <div className='overflow-y-auto w-3/4 md:w-2/4 m-auto md:mx-0'>
           <div className='text-slate-600 flex flex-col gap-y-5 text-center p-2 py-4 md:p-8 w-full lg:w-2/3 md:text-left justify-center'>
             <h1 className='text-[16px] md:text-[2rem] font-bold tracking-wider text-slate-700'>Contact Us</h1>
@@ -49,26 +74,39 @@ const Contact = () => {
         <div className="hidden md:inline-block consulting-image w-1/2">
           <img src={consultingImage} alt="consulting image" className='object-cover h-full w-full object-top' />
         </div>
-      </div>
+      </motion.div>
 
-      <div className='flex flex-wrap my-16 justify-evenly gap-10'>
+      {/* Contact Cards Section */}
+      <motion.div
+        className='flex flex-wrap my-16 justify-evenly gap-10'
+        ref={contactCardsRef}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: contactCardsInView ? 1 : 0, scale: contactCardsInView ? 1 : 0.9 }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+      >
         {
           contactsData.map((contactData, index) => (
             <ContactCard contactData={contactData} key={index} index={index} />
           ))
         }
-      </div>
+      </motion.div>
 
-      <h1 className='text-[16px] md:text-[2rem] text-slate-700 mt-10 mb-5 text-center font-semibold tracking-wide'>Connect with our offices</h1>
-      <div className="location flex justify-center items-center flex-col md:flex-row mb-10">
+      {/* Connect with Our Offices Section */}
+      <motion.div
+        className="location flex justify-center items-center flex-col md:flex-row mb-10"
+        ref={officesRef}
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: officesInView ? 1 : 0, y: officesInView ? 0 : -30 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
         <Map />
         <div className='w-4/5 md:w-1/4 p-4 border-[2px] border-slate-700 md:h-[60vh] flex flex-wrap gap-x-12 gap-y-6 md:flex-col justify-evenly'>
           <div>
             <h1 className='text-[16px] md:text-[1.2rem] text-slate-800 font-semibold'>Headquarters Location</h1>
             <p className='flex flex-col text-slate-500'>
-              <span>House No. 135</span>
-              <span>Kamal Colony, Samrala</span>
-              <span>Punjab, India</span>
+              <span>52, Tarani Colony,</span>
+              <span>Behind Forest Office</span>
+              <span>Dewas (Madhya Pradesh) 455001</span>
             </p>
           </div>
           <div>
@@ -84,7 +122,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <ContactSection />
 

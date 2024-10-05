@@ -3,14 +3,14 @@ import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './Map.css';
 import { divIcon, Icon, point } from 'leaflet';
-import locationPin from '../../assets/contact assets/location-pin-svgrepo-com.svg';
+import locationPin from '../../assets/contact-assets/location-pin-svgrepo-com.svg';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 
 const Map = () => {
   const markers = [
     {
-      geocode: [30.839632, 76.184158],
-      popup: "Rahul Grover's Home"
+      geocode: [22.962960, 76.042849],
+      popup: "Nidhi Manish Rathi & Co."
     },
   ];
 

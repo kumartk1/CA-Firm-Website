@@ -1,5 +1,5 @@
 .leaflet-container {
-    height: 60vh;
+    height: 40vh;
     width: 80%;
     margin: 0 auto;
     border: 2px solid rgb(51, 65, 85);
@@ -10,6 +10,7 @@
 @media screen and (min-width: 768px) {
     .leaflet-container {
         width: 50%;
+        height: 60vh;
         margin: 3% 0;
         border-bottom: 2px solid rgb(51, 65, 85);
         border-right: 0px;

@@ -9,6 +9,9 @@ import cargill from '../../assets/clients/cargill.png';
 import sbi from '../../assets/clients/sbi.png';
 import canara from '../../assets/clients/canara.png';
 import ubi from '../../assets/clients/ubi.png';
+import goodricke from '../../assets/clients/goodricke.png'
+import aradhya from '../../assets/clients/aradhya.png'
+import MP_warehouse from '../../assets/clients/MP_warehouse.png'
 
 const ClientsSection = () => {
     const { ref, inView } = useInView({
@@ -85,7 +88,7 @@ const ClientsSection = () => {
             </motion.p>
             <div className="container mx-auto px-4 mt-9">
                 <Slider {...settings}>
-                    {[boi, cargill, sbi, canara, ubi].map((logo, index) => (
+                    {[boi, cargill, sbi, canara, ubi, goodricke, MP_warehouse, aradhya].map((logo, index) => (
                         <div className="px-2" key={index}>
                             <motion.div
                                 className="flex justify-center items-center h-24"
