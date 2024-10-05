@@ -11,10 +11,15 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
+<<<<<<< HEAD
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "flowbite": "^2.4.1",
+=======
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+>>>>>>> 546bd47a03ef45902d48b4aa2401ede336f7b08d
     "framer-motion": "^11.3.7",
     "leaflet": "^1.9.4",
     "react": "^18.3.1",

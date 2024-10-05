@@ -12,7 +12,11 @@ const Footer = () => {
 
           {/* Mission Statement or Key Offerings */}
           <div className="flex-1 w-full lg:w-1/4">
+<<<<<<< HEAD
             <h4 className="text-lg lg:text-xl font-semibold mb-2 text-blue-400">Our Vision</h4>
+=======
+            <h4 className="text-lg lg:text-xl font-semibold mb-2 text-blue-400">Our Mission</h4>
+>>>>>>> 546bd47a03ef45902d48b4aa2401ede336f7b08d
             <p className="text-sm lg:text-base mb-4">We deliver exceptional financial services that drive success for our clients. Dedicated to providing expert solutions and unparalleled support.</p>
             <button className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
               Learn More

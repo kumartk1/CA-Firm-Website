@@ -56,7 +56,11 @@ const MainSection = () => {
           transitionTime={600}
           className="h-[450px] sm:h-[550px]"
           renderArrowPrev={() => null}
+<<<<<<< HEAD
           renderArrowNext={() => null}
+=======
+          renderArrowNext={() => null} 
+>>>>>>> 546bd47a03ef45902d48b4aa2401ede336f7b08d
           swipeable={true}
         >
           {images.map((img, index) => (
@@ -68,7 +72,11 @@ const MainSection = () => {
       </div>
 
       {/* For larger devices (1024px and up), text on left and carousel on right */}
+<<<<<<< HEAD
       <div className="hidden lg:flex lg:flex-row-reverse items-center bg-gradient-to-r from-[#F5F5F5] via-[#FFFFFF] to-[#F5F5F5] px-16 lg:pt-5 pt-16 shadow-xl">
+=======
+      <div className="hidden lg:flex lg:flex-row-reverse items-center bg-gradient-to-r from-[#F5F5F5] via-[#FFFFFF] to-[#F5F5F5] px-16 pt-16 shadow-xl">
+>>>>>>> 546bd47a03ef45902d48b4aa2401ede336f7b08d
         <motion.div
           className="w-1/2 relative"
           ref={imgRef}
@@ -84,6 +92,7 @@ const MainSection = () => {
             showIndicators={false}
             interval={3000}
             transitionTime={600}
+<<<<<<< HEAD
             className="h-[600px] rounded-tl-[40px] rounded-tr-[40px] overflow-hidden shadow-2xl"
             renderArrowPrev={() => null}
             renderArrowNext={() => null}
@@ -91,6 +100,15 @@ const MainSection = () => {
           >
             {images.map((img, index) => (
               <div key={index} className="relative text-center bg-cover bg-center h-[600px] overflow-hidden" style={{ backgroundImage: `url(${img})` }}>
+=======
+            className="h-[540px] rounded-tl-[40px] rounded-tr-[40px] overflow-hidden shadow-2xl"
+            renderArrowPrev={() => null}
+            renderArrowNext={() => null} 
+            swipeable={true}
+          >
+            {images.map((img, index) => (
+              <div key={index} className="relative text-center bg-cover bg-center h-[540px] overflow-hidden" style={{ backgroundImage: `url(${img})` }}>
+>>>>>>> 546bd47a03ef45902d48b4aa2401ede336f7b08d
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               </div>
             ))}
@@ -103,6 +121,7 @@ const MainSection = () => {
           animate={textAnimation.animate}
           transition={textAnimation.transition}
         >
+<<<<<<< HEAD
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 leading-tight">
             Your Trusted Financial Partner
           </h2>
@@ -110,6 +129,15 @@ const MainSection = () => {
           <a
             href="#contact"
             className="inline-block bg-[#FFD700] text-black px-6 py-3 text-[16px] font-semibold rounded-full shadow-md transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:shadow-lg hover:scale-105"
+=======
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800 leading-tight">
+            Your Trusted Financial Partner
+          </h2>
+          <p className="text-xl md:text-2xl lg:text-3xl mb-8">Expert Solutions for Your Accounting and Tax Needs</p>
+          <a
+            href="#contact"
+            className="inline-block bg-[#FFD700] text-black px-6 py-3 text-lg font-semibold rounded-full shadow-md transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:shadow-lg hover:scale-105"
+>>>>>>> 546bd47a03ef45902d48b4aa2401ede336f7b08d
           >
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" /> Contact Us
           </a>
