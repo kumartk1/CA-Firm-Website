@@ -18,12 +18,12 @@ const faqs = [
 
 const FAQItem = ({ faq, index, toggleFAQ, isOpen }) => (
     <div className={`border-b py-4 ${isOpen ? 'bg-gray-50' : ''} transition duration-300 ease-in-out`}>
-        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleFAQ(index)}>
-            <h4 className="text-lg font-semibold text-gray-800 hover:text-blue-600 transition duration-300 ease-in-out">{faq.question}</h4>
+        <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleFAQ(index)}>
+            <h4 className="text-lg font-semibold text-gray-800 transition duration-300 ease-in-out hover:text-blue-600">{faq.question}</h4>
             {isOpen ? (
-                <FiChevronUp className="text-blue-500 text-xl transition-transform duration-300 ease-in-out" />
+                <FiChevronUp className="text-xl text-blue-500 transition-transform duration-300 ease-in-out" />
             ) : (
-                <FiChevronDown className="text-blue-500 text-xl transition-transform duration-300 ease-in-out" />
+                <FiChevronDown className="text-xl text-blue-500 transition-transform duration-300 ease-in-out" />
             )}
         </div>
         <div className={`mt-2 text-gray-600 transition-max-height duration-300 ease-in-out ${isOpen ? 'max-h-96' : 'max-h-0 overflow-hidden'}`}>
@@ -40,9 +40,9 @@ const ContactSection = () => {
     };
 
     return (
-        <section className="py-16 px-4 lg:px-16 bg-white text-gray-700">
-            <div className="container mx-auto flex flex-col md:flex-row items-center">
-                <div className="md:w-1/2 mb-10 md:mb-0 md:pr-10 pl-3">
+        <section className="px-4 py-16 text-gray-700 bg-white lg:px-16">
+            <div className="container flex flex-col items-center mx-auto md:flex-row">
+                <div className="pl-3 mb-10 md:w-1/2 md:mb-0 md:pr-10">
                     <h2 className="text-[28px] md:text-4xl font-extrabold leading-tight mb-4 text-gray-900">Contact Us</h2>
                     <p className="text-[16px] md:text-lg leading-relaxed mb-4 text-gray-800">
                         Have questions? We’re here to help. Reach out to us for any queries or consultation.
@@ -50,30 +50,30 @@ const ContactSection = () => {
                     <p className="text-[16px] md:text-lg leading-relaxed mb-6 text-gray-700">
                         Our team of experts is ready to provide you with the best service and support.
                     </p>
-                    <div className="flex items-start mb-6 bg-white p-4 rounded-lg shadow-md">
+                    <div className="flex items-start p-4 mb-6 bg-white rounded-lg shadow-md">
                         <FiPhoneCall className="text-[24px] md:text-3xl mr-4 text-blue-600" />
                         <div>
                             <p className="text-[16px] md:text-lg font-semibold text-gray-800">Call us at</p>
-                            <a href="tel:+1234567890" className="underline text-[16px] md:text-lg font-semibold text-blue-600 hover:text-blue-800">+1 (234) 567-890</a>
+                            <a href="tel:+1234567890" className="underline text-[16px] md:text-lg font-semibold text-blue-600 hover:text-blue-800">+91-9826406256</a>
                         </div>
                     </div>
-                    <div className="flex items-start mb-6 bg-white p-4 rounded-lg shadow-md">
+                    <div className="flex items-start p-4 mb-6 bg-white rounded-lg shadow-md">
                         <FiMail className="text-[24px] md:text-3xl mr-4 text-blue-600" />
                         <div>
                             <p className="text-[16px] md:text-lg font-semibold text-gray-800">Email us at</p>
-                            <a href="mailto:info@example.com" className="underline text-[16px] md:text-lg font-semibold text-blue-600 hover:text-blue-800">info@example.com</a>
+                            <a href="mailto:info@example.com" className="underline text-[16px] md:text-lg font-semibold text-blue-600 hover:text-blue-800">nidhimanishrathi@rediffmail.com</a>
                         </div>
                     </div>
-                    <div className="flex items-start bg-white p-4 rounded-lg shadow-md">
+                    <div className="flex items-start p-4 bg-white rounded-lg shadow-md">
                         <FiMapPin className="text-[24px] md:text-3xl mr-4 text-blue-600" />
                         <div>
                             <p className="text-[16px] md:text-lg font-semibold text-gray-800">Visit us at</p>
-                            <p className="text-[16px] md:text-lg font-semibold text-gray-700">123 Main Street, Anytown, USA</p>
+                            <p className="text-[16px] md:text-lg font-semibold text-gray-700">52, Tarani Colony, Behind Forest Office, Dewas (M.P), 455001</p>
                         </div>
                     </div>
                 </div>
                 <div className="md:w-1/2">
-                    <div className="w-full bg-white rounded-lg shadow-xl p-6">
+                    <div className="w-full p-6 bg-white rounded-lg shadow-xl">
                         <h3 className="text-[24px] md:text-3xl font-bold leading-tight mb-4 text-center text-gray-900">Frequently Asked Questions</h3>
                         {faqs.map((faq, index) => (
                             <FAQItem 

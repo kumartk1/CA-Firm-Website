@@ -3,8 +3,9 @@ import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedi
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 
-const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
-const email = import.meta.env.VITE_CONTACT_EMAIL;
+// Hard-coded contact information
+const phoneNumber = "+91-9826406256"; // Replace with the actual phone number
+const email = "nidhimanishrathi@rediffmail.com"; // Replace with the actual email address
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,8 +50,8 @@ const Navbar = () => {
     return (
         <header className={`sticky top-0 z-50 transition-all duration-300 ${isSticky ? 'bg-white shadow-md' : 'bg-gradient-to-r from-[#F5F5F5] via-[#FFFFFF] to-[#F5F5F5]'}`}>
             {/* Top Navbar Bar */}
-            <div className="bg-gray-900 text-white text-sm py-2 justify-between items-center hidden md:flex">
-                <div className="ml-4 flex items-center space-x-4">
+            <div className="items-center justify-between hidden py-2 text-sm text-white bg-gray-900 md:flex">
+                <div className="flex items-center ml-4 space-x-4">
                     <div className="flex items-center">
                         <FaEnvelope className="mr-2 transition-colors duration-300 hover:text-current" />
                         <a href={`mailto:${email}`} className="transition-colors duration-300 hover:text-current">{email}</a>
@@ -60,7 +61,7 @@ const Navbar = () => {
                         <a href={`tel:${phoneNumber}`} className="transition-colors duration-300 hover:text-current">{phoneNumber}</a>
                     </div>
                 </div>
-                <div className="mr-4 flex space-x-4">
+                <div className="flex mr-4 space-x-4">
                     <a href="#" className="transition-colors duration-300 hover:text-[#3b5998]"><FaFacebookF /></a>
                     <a href="#" className="transition-colors duration-300 hover:text-[#0077b5]"><FaLinkedinIn /></a>
                     <a href="#" className="transition-colors duration-300 hover:text-[#e4405f]"><FaInstagram /></a>
@@ -68,37 +69,37 @@ const Navbar = () => {
             </div>
 
             {/* Main Navbar Section */}
-            <div className="max-w-full p-4 flex justify-between items-center">
+            <div className="flex items-center justify-between max-w-full p-4">
                 <h1 className="text-2xl font-bold text-[#01487c] cursor-pointer" onClick={() => handleNavLinkClick('/')}>Nidhi Manish Rathi & Co.</h1>
-                <div className="hidden lg:flex flex-1 justify-center items-center space-x-8 text-slate-800">
-                    <nav className="space-x-8 flex items-center">
+                <div className="items-center justify-center flex-1 hidden space-x-8 lg:flex text-slate-800">
+                    <nav className="flex items-center space-x-8">
                         <button
-                            className="font-semibold relative group hover:text-blue-600"
+                            className="relative font-semibold group hover:text-blue-600"
                             onClick={() => handleNavLinkClick('/')}
                         >
                             Home
-                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></div>
+                            <div className="absolute bottom-0 left-0 w-0 h-1 transition-all duration-300 bg-blue-500 group-hover:w-full"></div>
                         </button>
                         <button
-                            className="font-semibold relative group hover:text-blue-600"
+                            className="relative font-semibold group hover:text-blue-600"
                             onClick={() => handleNavLinkClick('/services')}
                         >
                             Services
-                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></div>
+                            <div className="absolute bottom-0 left-0 w-0 h-1 transition-all duration-300 bg-blue-500 group-hover:w-full"></div>
                         </button>
                         <button
-                            className="font-semibold relative group hover:text-blue-600"
+                            className="relative font-semibold group hover:text-blue-600"
                             onClick={() => handleNavLinkClick('/about')}
                         >
                             About
-                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></div>
+                            <div className="absolute bottom-0 left-0 w-0 h-1 transition-all duration-300 bg-blue-500 group-hover:w-full"></div>
                         </button>
                         <button
-                            className="font-semibold relative group hover:text-blue-600"
+                            className="relative font-semibold group hover:text-blue-600"
                             onClick={() => handleNavLinkClick('/contact')}
                         >
                             Contact Us
-                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></div>
+                            <div className="absolute bottom-0 left-0 w-0 h-1 transition-all duration-300 bg-blue-500 group-hover:w-full"></div>
                         </button>
                     </nav>
                 </div>
@@ -125,8 +126,8 @@ const Navbar = () => {
                     onClick={toggleMenu}
                 ></div>
                 <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-                    <div className="p-4 mt-10 flex justify-between items-center">
-                        <h2 className="text-lg font-bold mb-4">Nidhi Manish Rathi & Co.</h2>
+                    <div className="flex items-center justify-between p-4 mt-10">
+                        <h2 className="mb-4 text-lg font-bold">Nidhi Manish Rathi & Co.</h2>
                         <button onClick={toggleMenu} className="focus:outline-none">
                             <IoMdClose size={24} />
                         </button>
@@ -142,7 +143,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <hr className="border-t border-gray-400" />
-                    <div className="p-4 flex flex-col text-slate-800 space-y-4 no-underline">
+                    <div className="flex flex-col p-4 space-y-4 no-underline text-slate-800">
                         <button
                             className="font-semibold text-left hover:text-blue-600" 
                             onClick={() => {
@@ -184,10 +185,10 @@ const Navbar = () => {
                             className="bg-[#01487c] text-white px-9 py-4 flex items-center rounded-full transition-all duration-300 ease-in-out hover:bg-[#55b848] hover:scale-105 min-w-[180px]"
                         >
                             {phoneNumber}
-                            <FaWhatsapp className="ml-2 text-lg" /> {/* Increased size */}
+                            <FaWhatsapp className="ml-2 text-lg" />
                         </button>
                     </div>
-                    <div className="flex justify-center space-x-6 p-4"> {/* Increased size */}
+                    <div className="flex justify-center p-4 space-x-6">
                         <a href="#" className="transition-colors duration-300 hover:text-[#3b5998] text-xl"><FaFacebookF /></a>
                         <a href="#" className="transition-colors duration-300 hover:text-[#0077b5] text-xl"><FaLinkedinIn /></a>
                         <a href="#" className="transition-colors duration-300 hover:text-[#e4405f] text-xl"><FaInstagram /></a>

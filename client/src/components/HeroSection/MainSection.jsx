@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import carouselImg1 from '../../assets/carousel/carousel-img-1.jpg';
 import carouselImg2 from '../../assets/carousel/carousel-img-2.jpg';
 import carouselImg3 from '../../assets/carousel/carousel-img-3.jpg';
@@ -29,22 +30,22 @@ const MainSection = () => {
   const images = [carouselImg1, carouselImg2, carouselImg3, carouselImg4];
 
   return (
-    <section className="relative text-center overflow-hidden">
+    <section className="relative overflow-hidden text-center">
       {/* For devices smaller than 1024px, text on top of carousel */}
       <div className="lg:hidden">
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white z-10 p-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-4 text-white">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
             Your Trusted Financial Partner
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl mb-8">
+          <p className="mb-8 text-lg md:text-xl lg:text-2xl">
             Expert Solutions for Your Accounting and Tax Needs
           </p>
-          <a
-            href="#contact"
+          <Link
+            to="/contact" // Added Link to route to Contact page
             className="inline-block bg-[#F5F5F5] text-black px-6 py-3 text-lg font-semibold rounded-full shadow-md transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:shadow-lg hover:scale-105"
           >
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" /> Contact Us
-          </a>
+          </Link>
         </div>
         <Carousel
           autoPlay
@@ -70,7 +71,7 @@ const MainSection = () => {
       {/* For larger devices (1024px and up), text on left and carousel on right */}
       <div className="hidden lg:flex lg:flex-row-reverse items-center bg-gradient-to-r from-[#F5F5F5] via-[#FFFFFF] to-[#F5F5F5] px-16 lg:pt-5 pt-16 shadow-xl">
         <motion.div
-          className="w-1/2 relative"
+          className="relative w-1/2"
           ref={imgRef}
           initial={imgAnimation.initial}
           animate={imgAnimation.animate}
@@ -97,22 +98,22 @@ const MainSection = () => {
           </Carousel>
         </motion.div>
         <motion.div
-          className="w-1/2 text-left text-black p-8 space-y-6"
+          className="w-1/2 p-8 space-y-6 text-left text-black"
           ref={textRef}
           initial={textAnimation.initial}
           animate={textAnimation.animate}
           transition={textAnimation.transition}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 leading-tight">
+          <h2 className="mb-4 text-4xl font-bold leading-tight text-gray-800 md:text-5xl">
             Your Trusted Financial Partner
           </h2>
-          <p className="text-xl md:text-2xl lg:text-2xl mb-8">Expert Solutions for Your Accounting and Tax Needs</p>
-          <a
-            href="#contact"
+          <p className="mb-8 text-xl md:text-2xl lg:text-2xl">Expert Solutions for Your Accounting and Tax Needs</p>
+          <Link
+            to="/contact" // Updated Link to redirect to Contact page
             className="inline-block bg-[#FFD700] text-black px-6 py-3 text-[16px] font-semibold rounded-full shadow-md transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:shadow-lg hover:scale-105"
           >
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" /> Contact Us
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
